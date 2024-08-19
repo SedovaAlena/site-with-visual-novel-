@@ -1,0 +1,140 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<i>Может быть, у начальника штаба я узнаю, что произошло.</i>";
+fr[1]= "<b>Этот путь на 15 минут дольше.</b>";
+fr[2]= "<i>15 минут не так уж и много.</i>";
+fr[3]= "*Через некоторое время у квартиры начальника штаба.*";
+fr[4]= "<i>Вот и его дверь, надо позвонить в звонок.</i>";
+fr[5]= "*Щелчок. Дверь открылась.*";
+fr[6]= "<i>Что?</i>";
+fr[7]= "<b>Заходи.</b>";
+fr[8]= "<i>Здесь никого нет.</i>";
+fr[9]= "<b>Поищи что-нибудь полезное.</b>";
+fr[10]= "<i>Вот кнопка, написано:<br> \"Нажать в случае ЧС\".</i>";
+fr[11]= "<b>У нас как раз в городе чрезвычайная ситуация.</b>";
+fr[12]= "<b>ЖМИ!</b>";
+fr[13]= "*Появляется голограмма начальника штаба.*";
+fr[14]= "Приветсвую! Я Котов Лепольд Львович - начальник штаба.";
+fr[15]= "Если Вы здесь, значит случилась чрезвычайная ситуация.";
+fr[16]= "А меня нет в городе, и я удаленно открыл свою квартиру.";
+fr[17]= "СЛУШАЙТЕ ВНИМАТЕЛЬНО!";
+fr[18]= "Вам необходимо попасть в штаб.";
+fr[19]= "Все необходимые коды доступа в инструкции для микроволновки.";
+fr[20]= "На 13 странице.";
+fr[21]= "Нужные цифры обведены.";
+fr[22]= "Комментарии на полях помогут разобраться.";
+fr[23]= "Удачи! Теперь всё в Ваших руках!";
+fr[24]= "<i>Никогда бы не подумала, что в инструкции для микроволновки я узнаю что-то новое.</i>";
+fr[25]= "<i>Она у меня записана в памяти.</i>";
+fr[26]= "<b>Теперь еще и коды записаны.</b>";
+fr[27]= "<b>Быстрее в штаб!</b>";
+fr[28]= "*Через 20 минут у дверей штаба.*";
+fr[29]= "<i>Нужно ввести код разблокирования двери: 26041986.</i>";
+fr[30]= "<b>ДВЕРЬ РАЗБЛОКИРОВАНА!</b>";
+fr[31]= "<i>Прекрасно! Осталось найти систему экранирования города \"ЭУ-771\".</i>";
+fr[32]= "<i>А вот и она!</i>";
+fr[33]= "<i>Ввожу код: 1896.</i>";
+fr[34]= "<b>СИСТЕМА \"ЭУ-771\" УСПЕШНО АКТИВИРОВАНА!</b>";
+fr[35]= "<b>ЗАПУЩЕНА <a href=\"#\" onclick=\"info()\">ДЕЗАКТИВАЦИЯ<\/a> ГОРОДА \"КОТЕЙКИНО\".</b>";
+fr[36]= "<i>УРА! Я сделала это!</i>";
+
+
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+if (i==13) {document.getElementById("foto1").src="text2.png";}
+if (i==24) {document.getElementById("foto1").src="text.png";}
+if (i==3) {document.getElementById("tab11").style.backgroundImage="url(fon3.jpg)";}
+if (i==8) {document.getElementById("tab11").style.backgroundImage="url(fon1.jpg)";}
+if (i==28) {document.getElementById("tab11").style.backgroundImage="url(fon4.jpg)";}
+if (i==32) {document.getElementById("tab11").style.backgroundImage="url(fon6.jpg)";}
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").innerHTML="<b>МИССИЯ ВЫПОЛНЕНА!<\/b><br>Город защищен от опасности.<br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"glossary.html\" class=\"close\" >Теоретические материалы<\/a>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"index.html\" class=\"close\" >Начать игру заново<\/a>";
+
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="&nbsp;&nbsp;&nbsp;<b>Дезактивация<\/b> — это один из видов обеззараживания, представляет собой удаление радиоактивных веществ с заражённой территории, с поверхности зданий, сооружений, техники, одежды, средств индивидуальной защиты, воды, продовольствия. <br><ul><b>Существует несколько разновидностей дезактиваций: <\/b><li>механическая; <li>физико-химическая; <li>электрохимическая; <li>лазерная; <li>дезактивация с использованием ультразвука.<\/ul>";
+document.getElementById("fraza").innerHTML+="<br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" id="tab11" cellspacing="0" cellpadding="0"  height="1080" background="fon0.jpg">
+<tr valign="middle">
+<td  id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<html>
+<head>
+
+ 
+<link rel="stylesheet" href="style.css" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="/smt.js"></script>
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<i>О чем я думала? Штаб закрыт на кодовый замок...</i>";
+fr[1]= "<i>У меня нет кода доступа...</i>";
+fr[2]= "<b>Осмотрись, вдруг тут есть другие входы.</b>";
+fr[3]= "*После обхода территории.*";
+fr[4]= "<i>Двери не обнаружены, но есть окно.</i>";
+fr[5]= "<b>Попробуй открыть окно.</b>";
+fr[6]= "<i>Окно закрыто. Нет даже ручки.</i>";
+fr[7]= "<b>Поищи чем можно разбить стекло.</b>";
+fr[8]= "<i>Как? Это же порча имущества? Я не могу!</i>";
+fr[9]= "<b>Сейчас по-другому нельзя.</b>";
+fr[10]= "<i>И, правда, нет другого выхода...</i>";
+fr[11]= "*через несколько часов.*";
+fr[12]= "<i>СИСТЕМА, что мне делать?</i>";
+fr[13]= "<i>Я уже десять раз обошла штаб снаружи и осмотрела всё в радиусе 10 метров.</i>";
+fr[14]= "<i>Ничего подходящего не обраружено.</i>";
+fr[15]= "<b>Попробуй ввести какой-нибудь код, вдруг подойдет.</b>";
+fr[16]= "<i>Попробуем: 00000000, 00000001, 00000002...</i>";
+fr[17]= "<b>Превышено количество допустимых попыток ввода кода.</b>";
+fr[18]= "<b>Дверь заблокирована на 3 часа.</b>";
+fr[19]= "<b>Повторите попытку позже.</b>";
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").innerHTML="После 12 часов безуспешных попыток подборки кода и бессмыcленного ожидания, робот HW-771 перешла в спящий режим.";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"index.html\" class=\"close\" >Начать игру заново<\/a>";
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="<b>При аварии на радиационно опасных объектах:</b><ol><li>Включить вещатель.<li>Необходимо вынести все продукты и мусор.<li>Выключить свет и газ.<li>Берём необходимые вещи.<li>Надеваем средства защиты кожи и дыхания.<li>Идём в эвакуационный пункт.<\/ol>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body  text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon4.jpg">
+<tr valign="middle">
+<td  id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>

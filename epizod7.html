@@ -1,0 +1,108 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<i>Конечно, в центр Техподдержки</i>";
+fr[1]= "<i>Я так долго была выключена. Надо узнать, что нового.</i>";
+fr[2]= "<b>Необходимо обновление системы! Ты не обновлялась уже 2 года.</b>";
+fr[3]= "<i>Это же сколько обновлений я пропустила</i>";
+fr[4]= "<b>Скорее всего 4. Обновления - 2 раза в год.</b>";
+fr[5]= "*Прошло 25 минут*";
+fr[6]= "<b>Заряд аккумулятора менее 10%</b>";
+fr[7]= "<i>Как хорошо, что я успела добраться в техцентр</i>";
+fr[8]= "<i>И подзаряжусь и обновлюсь!</i>";
+fr[9]= "<b>Осторожно! В модуле обновления обнаружен неопознанный носитель информации</b>";
+fr[10]= "<i>Да, вставлена флешка с надписью \"С.H.\". Что это может означать?</i>";
+fr[11]= "<i>\"С.H.\" - возможно home cooking (домашняя кухня)</i>";
+fr[12]= "<b>Установка этого программного обеспечения может привести к заражению <a href=\"#\" onclick=\"info()\">вирусами<\/a>.</b>";
+fr[13]= "<b>Система рекомендует извлечь неопознанный носитель информации и произвести безопасное обновление.</b>";
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").innerHTML="Давно хотела узнать рецепт манной каши, но боюсь, вдруг на флешке вирус...<br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"epizod8.html?"+f+"\" class=\"close\" >Извлечь флеш-память<\/a>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"fin2.html\" class=\"close\" >Установить ПО \"C.H.\"<\/a>";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="500px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="<b>Защита от компьютерных вирусов:</b><ul><li>Установить и обновлять антивирусную программу.<li>Не открывать вложения в электронной почте от неизвестных адресатов.<li>Не заходить на потенциально опасные сайты.<li>Использовать сложные пароли.<li>Не устанавливать подозрительное ПО.<\/ul>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon5.jpg">
+<tr valign="middle">
+<td  id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>

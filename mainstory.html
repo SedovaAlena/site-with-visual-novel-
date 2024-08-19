@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="/smt.js"></script>
+        <title>Игра</title>
+        <script type="text/javascript">
+
+            var fr= new Array();
+            fr[0]= "<h3>Добро пожаловать!<\/h3>Помогите роботу HW-771 спасти город.<br><br><a href=\"epizod1.html\" class=\"close\">Начать игру<\/a><br><br><a href=\"#\" class=\"close\" onclick=\"index(1)\">О роботе<\/a><br><br><a href=\"#\" class=\"close\" onclick=\"index(2)\">Авторы<\/a><br><br>";
+            fr[1]= "<h3>HW-771<\/h3><b>Тип:<\/b> Домашний робот.<br><b>Предназначение:<\/b> Присмотр за детьми.<br><br><a href=\"#\" class=\"close\" onclick=\"index(0)\">Назад<\/a>";
+            fr[2]= "<h3>Разработчик<\/h3><b>Студентка группы ПИ-0320:<\/b><br>Седова Алёна<br><a href=\"#\" class=\"close\" onclick=\"index(0)\">Назад<\/a>";
+            
+            
+            
+            function index(i)
+            {
+            
+            document.getElementById("fraza").innerHTML=fr[i];
+            
+            } 
+            </script>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body text="#000000"  onload="index(0)">
+        <div id="header">
+            <div id="navigation">
+                <ul id="menu">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="mainstory.html">Начать историю</a></li>
+                </ul>
+            </div>
+         </div>
+        
+        <table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon0.jpg">
+<tr valign="middle">
+<td align="center" id="pole">
+<div class="text"  >
+<img src="1.png" height="1080">
+<div id="fraza">
+
+</div>
+
+
+	
+</div>
+</td><tr>
+</table>
+
+</td><tr>
+</table>
+    </body>
+</html>

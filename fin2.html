@@ -1,0 +1,120 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+  
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<b>Пакет \"C.H.\" успешно установлен.</b>";
+fr[1]= "<b>Вирусы не обнаружены!</b>";
+fr[2]= "<i>И рецепт манной каши тоже...</i>";
+fr[3]= "<i>Что же я установила?</i>";
+fr[4]= "<b>Файл не опасен. Но система не знает, что в нем.</b>";
+fr[5]= "<i>Сейчас нет времени это выяснять. Главное, что не опасен.</i>";
+fr[6]= "<b>Заряд аккумулятора: 100%.</b>";
+fr[7]= "<i>Замечательно! Мне хватит энергии на мою спасительную миссию.</i>";
+fr[8]= "<i>Быстрее в Штаб!!!</i>";
+fr[9]= "*Через 20 минут у дверей штаба.*";
+fr[10]= "<i>О чем я думала? Штаб закрыт...</i>";
+fr[11]= "<b>Попробуй подобрать код.</b>";
+fr[12]= "<i>О что это? Перед глазами мелькают цифры...</i>";
+fr[13]= "<i>2.. 6.. 0.. 4.. 1.. 9.. 8.. 6.</i>";
+fr[14]= "<b>ДВЕРЬ РАЗБЛОКИРОВАНА!</b>";
+fr[15]= "<i>Прекрасно! Осталось найти систему экранирования города \"ЭУ-771\".</i>";
+fr[16]= "<i>А вот и она!</i>";
+fr[17]= "<i>Попробую и здесь подобрать код.</i>";
+fr[18]= "<i>1.. 8.. 9.. 6.</i>";
+fr[19]= "<b>СИСТЕМА \"ЭУ-771\" УСПЕШНО АКТИВИРОВАНА!</b>";
+fr[20]= "<b>ЗАПУЩЕНА <a href=\"#\" onclick=\"info()\">ДЕЗАКТИВАЦИЯ<\/a> ГОРОДА \"КОТЕЙКИНО\".</b>";
+fr[21]= "<i>УРА! Я сделала это!</i>";
+
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+if (i==9) {document.getElementById("tab11").style.backgroundImage="url(fon4.jpg)";}
+if (i==16) {document.getElementById("tab11").style.backgroundImage="url(fon6.jpg)";}
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").innerHTML="<b>МИССИЯ ВЫПОЛНЕНА!<\/b><br>Город защищен от опасности.<br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"glossary.html\" class=\"close\" >Теоретические материалы<\/a>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"index.html\" class=\"close\" >Начать игру заново<\/a>";
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="&nbsp;&nbsp;&nbsp;<b>Дезактивация<\/b> — это один из видов обеззараживания, представляет собой удаление радиоактивных веществ с заражённой территории, с поверхности зданий, сооружений, техники, одежды, средств индивидуальной защиты, воды, продовольствия. <br><ul><b>Существует несколько разновидностей дезактиваций: <\/b><li>механическая; <li>физико-химическая; <li>электрохимическая; <li>лазерная; <li>дезактивация с использованием ультразвука.<\/ul>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" id="tab11" cellspacing="0" cellpadding="0"  height="1080" background="fon5.jpg">
+<tr valign="middle">
+<td  id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>

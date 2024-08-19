@@ -1,0 +1,109 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+    
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<i>Как я покину помещение, <a href=\"#\" onclick=\"info()\">если тут пожар<\/a>?</i>";
+fr[1]= "<i>НУЖНО ЕГО ПОТУШИТЬ!!!</i>";
+fr[2]= "<i>Но как? Здесь же нет огнетушителя...</i>";
+fr[3]= "<b>ВНИМАНИЕ! ВСЕМ СРОЧНО ПОКИНУТЬ ПОМЕЩЕНИЕ!</b>";
+fr[4]= "<i>Пожар можно потушить с помощью песка или воды.</i>";
+fr[5]= "<i>Но здесь нет ни песка, ни воды.</i>";
+fr[7]= "<b>ВСЕМ СРОЧНО ПОКИНУТЬ ПОМЕЩЕНИЕ!</b>";
+fr[6]= "<b>Система пожаротушения неисправна!</b>";
+fr[8]= "<i>Её нужно починить как можно быстрее!</i>";
+fr[9]= "*Робот HW-771 выполняет ремонт системы пожаротушения.*";
+fr[10]= "<b>Система пожаротушения активирована!</b>";
+fr[11]= "*Пожар потушен!*";
+
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").innerHTML="К сожалению, на ремонт системы пожаротушения ушло слишком много энергии. Робот HW-771 вынужден отключиться...<br><b>Прекращение работы всех систем.</b><br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"index.html\" class=\"close\" >Начать игру заново<\/a>";
+
+document.getElementById("fraza").style.top="130px";
+document.getElementById("fraza").style.left="320px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="<b>При пожаре в здании необходимо:</b><ol><li>Оценить ситуацию;<li>Нужно сообщить пожарным;<li>Двигаться в сторону противоположную пожару.<\/ol>Если решили идти по коридору нужно: укрыть голову мокрой тканью, дышать через платок, идти на четвереньках.<br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon0.jpg">
+<tr valign="middle">
+<td id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>
+
+ 

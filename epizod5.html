@@ -1,0 +1,113 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+  
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url; 
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "<b>Внимание! Аккумулятор практически разряжен</b>";
+fr[1]= "<i>Как? Я же только недавно активировалась... </i>";
+fr[2]= "<b>Ты активировалась с уже неполным уровнем заряда</b>";
+fr[3]= "<b>Даже в спящем режиме твои <a href=\"#\" onclick=\"info()\">аккумуляторы<\/a> постепенно разряжаются</b>";
+fr[4]= "<i>Понятно. Что теперь делать?</i>";
+fr[5]= "<b>Нужно зарядить аккумуляторы</b>";
+fr[6]= "<i>А как же моя миссия?</i>";
+fr[7]= "<i>Мне нужно попасть в штаб и активировать систему экранирования города</i>";
+fr[8]= "<i>Времени не так много</i>";
+fr[9]= "<b>Штаб находится на расстоянии 3 километров</b>";
+fr[10]= "<i>А мне хватит энергии туда дойти?</i>";
+fr[11]= "<b>Система не знает ответа на этот вопрос</b>";
+fr[12]= "<b>Зато есть информация о местоположении ближайшей заправки и центра техобстуживания</b>";
+
+i=0; i1=0;
+
+
+function index()
+{
+if (i<fr.length && (i1!=0 || f%5!=0)){
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+if (f%5==0 && i1==0){
+document.getElementById("fraza").innerHTML="<i>Я нашла в кустах кирпич<br>и взяла его с собой</i>";
+i1++;}
+if (i>=fr.length)
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").innerHTML="Значит выбор остается за мной.<br>Куда же идти?<br>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"end2.html\" class=\"close\" >Продолжить путь в штаб<\/a>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"epizod8.html?"+f+"\" class=\"close\" >Быстрее на заправку<\/a>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"epizod7.html?"+f+"\" class=\"close\" >В центр техобслуживания<\/a>";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="500px";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="320px";
+document.getElementById("fraza").innerHTML="<b>Правила использования аккумуляторов.<\/b><ul type=\"square\"><li><b>Не стоит делать:<\/b><ul type=\"disc\"><li>бить,<li>ронять,<li>нагревать,<li>замораживать,<li>опускать в воду,<li>хранить в разряженном состоянии.<\/ul><\/li><\/ul>";
+document.getElementById("fraza").innerHTML+="<br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon2.jpg">
+<tr valign="middle">
+<td id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>
+
+ 

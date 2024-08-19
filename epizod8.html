@@ -1,0 +1,100 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="/smt.js"></script>
+  
+<script type="text/javascript">
+var ex_url=location.search.substring(1);
+if (ex_url>0) f=ex_url;
+if (ex_url=="") f=1;
+
+
+var fr= new Array();
+fr[0]= "*Прошло 5 минут*";
+fr[1]= "<i>Приступаю к зарядке аккумуляторов</i>";
+fr[2]= "*С начала зарядки прошло 10 минут*";
+fr[3]= "<b>Заряд аккумулятора: 100%</b>";
+fr[4]= "<i>Замечательно! Мне хватит энергии на мою спасительную миссию</i>";
+fr[5]= "<i>Быстрее в Штаб!!!</i>";
+fr[6]= "*Через 20 минут у дверей штаба*";
+
+i=0;
+
+
+function index()
+{
+if (i<fr.length){
+if (i==6) {document.getElementById("tab11").style.backgroundImage="url(fon4.jpg)";}
+document.getElementById("fraza").innerHTML=fr[i];
+i++;}
+else
+{
+if (f% 10==0) document.location.href = "fin3.html";
+if (f% 5!=0) document.location.href = "end3.html";
+if (f% 5==0 && f%2!=0) document.location.href = "end4.html";
+}
+}
+
+function info()
+{
+document.getElementById("foto1").src="1.png";
+document.getElementById("foto1").onclick=function(){back();};
+document.getElementById("fraza").style.fontSize="35px";
+document.getElementById("fraza").style.top="200px";
+document.getElementById("fraza").style.left="320px";
+
+document.getElementById("fraza").innerHTML="<b>При аварии на радиационно опасных объектах:</b><ol><li>Включить вещатель.<li>Необходимо вынести все продукты и мусор.<li>Выключить свет и газ.<li>Берём необходимые вещи.<li>Надеваем средства защиты кожи и дыхания.<li>Идём в эвакуационный пункт.<\/ol>";
+document.getElementById("fraza").innerHTML+="<br><br><a href=\"#\" class=\"close\" onclick=\"back()\" >Назад<\/a>";
+
+}
+function back()
+{
+document.getElementById("foto1").src="text.png";
+document.getElementById("foto1").onclick=function(){index();};
+document.getElementById("fraza").style.fontSize="50px";
+document.getElementById("fraza").style.top="800px";
+document.getElementById("fraza").style.left="300px";
+i--
+index();	
+}	
+</script>	
+	
+<title>Игра</title>
+</head>
+<body text="#000000" link="#aa00c6" vlink="#aa00c6" onload="index()">
+    <div id="header">
+        <div id="navigation">
+            <ul id="menu">
+                <li><a href="index.html">Главная</a></li>
+	            <li><a href="mainstory.html">Начать историю</a></li>
+            </ul>
+        </div>
+     </div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" height="100%">
+<tr valign="middle">
+<td align="center">
+
+<table border="0" cellspacing="0" cellpadding="0"  height="1080" background="fon5.jpg" id="tab11">
+<tr valign="middle">
+<td  id="pole">
+<div class="text1" id="osnova" >
+<map name="stepeni">
+<area shape="circle" coords="1498,504,91" OnClick="index()" class="chp">
+</map>
+<img src="text.png" height="1080" id="foto1" usemap="#stepeni">
+<div id="fraza" ></div>
+	
+</div>
+
+</td><tr>
+
+</table>
+
+</td><tr>
+</table>
+</body>
+</html>
+
+ 
